@@ -161,7 +161,7 @@ extern "C" {
 	/// </summary>
 	/// <param name="image_data">The source image data from Unity</param>
 	/// <returns>The final number of detected objects</returns>
-	DLLExport int PerformInference(uchar* image_data, float* output_array, int length)
+	DLLExport void PerformInference(uchar* image_data, float* output_array, int length)
 	{
 		// Store the pixel data for the source input image in an OpenCV Mat
 		cv::Mat input_image = cv::Mat(input_h, input_w, CV_8UC4, image_data);
@@ -206,7 +206,7 @@ extern "C" {
 		if (output_tensor == NULL) {
 			ort->ReleaseValue(input_tensor);
 			ort->ReleaseValue(output_tensor);
-			return -1;
+			return;
 		}
 
 		// Get the length of a single object proposal (i.e., number of object classes + 5)
@@ -221,14 +221,12 @@ extern "C" {
 		float* out_data;
 		ort->GetTensorMutableData(output_tensor, (void**)&out_data);
 
+		// Copy model output to the output array
 		std::memcpy(output_array, out_data, length * sizeof(float));
 
 		// Free memory for input and output tensors
 		ort->ReleaseValue(input_tensor);
 		ort->ReleaseValue(output_tensor);
-
-		// return the final number of detected objects
-		return 1;
 	}
 
 

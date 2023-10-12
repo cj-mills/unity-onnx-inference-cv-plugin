@@ -1,6 +1,8 @@
 // dllmain.cpp : Defines the entry point for the DLL application.
 #include "pch.h"
-
+#include <onnxruntime_cxx_api.h>
+#include "dml_provider_factory.h"
+#include <opencv2/opencv.hpp>
 
 // Create a macro to quickly mark a function for export
 #define DLLExport __declspec (dllexport)

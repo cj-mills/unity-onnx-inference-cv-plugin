@@ -5,12 +5,7 @@ This repository houses a Unity native plugin, built in Visual Studio, that lever
 
 
 
-## Dependency: OpenCV
+## Setup Steps:
 
-This project depends on the [OpenCV](https://opencv.org/) library.
-
-### Integration Steps:
-
-1. Visit the tutorial on [Integrating OpenCV with Visual Studio C++ Projects on Windows](https://christianjmills.com/posts/opencv-visual-studio-getting-started-tutorial/windows/).
-2. Follow the step-by-step instructions to ensure OpenCV is set up and integrated with your Visual Studio C++ environment.
-3. Once you've successfully followed the guide, you should be able to build and run the project without any issues related to OpenCV.
+1. Ensure the Solution Configuration for the Visual Studio project is in `Release` mode.
+2. Restore the NuGet packages.

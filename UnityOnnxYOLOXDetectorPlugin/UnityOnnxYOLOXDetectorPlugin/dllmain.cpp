@@ -18,8 +18,6 @@ extern "C" {
 
 	// ONNX Runtime API interface
 	const OrtApi* ort{ nullptr };
-	
-	//const OrtDmlApi* ort_dml_api{ nullptr };
 
 	// List of available execution providers
 	char** provider_names;
@@ -129,8 +127,6 @@ extern "C" {
 			ort->DisableMemPattern(session_options);
 			ort->SetSessionExecutionMode(session_options, ExecutionMode::ORT_SEQUENTIAL);
 			OrtSessionOptionsAppendExecutionProvider_DML(session_options, 0);
-			
-			//ort_dml_api->SessionOptionsAppendExecutionProvider_DML(session_options, 0);
 		}
 		else return_val = 1;
 

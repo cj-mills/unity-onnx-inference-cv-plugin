@@ -2,7 +2,6 @@
 #include "pch.h"
 #include <onnxruntime_cxx_api.h>
 #include "dml_provider_factory.h"
-#include <opencv2/opencv.hpp>
 
 // Create a macro to quickly mark a function for export
 #define DLLExport __declspec (dllexport)
@@ -163,20 +162,14 @@ extern "C" {
 	/// </summary>
 	/// <param name="image_data">The source image data from Unity</param>
 	/// <returns>The final number of detected objects</returns>
-	DLLExport void PerformInference(uchar* image_data, float* output_array, int length)
+	DLLExport void PerformInference(byte* image_data, float* output_array, int length)
 	{
-		// Store the pixel data for the source input image in an OpenCV Mat
-		cv::Mat input_image = cv::Mat(input_h, input_w, CV_8UC4, image_data);
-
-		// Remove the alpha channel
-		cv::cvtColor(input_image, input_image, cv::COLOR_RGBA2RGB);
-
 		// Iterate over each pixel in image
 		for (int p = 0; p < n_pixels; p++)
 		{
 			for (int ch = 0; ch < n_channels; ch++) {
 				// Scale and normalize each value
-				input_data[ch * n_pixels + p] = (input_image.data[p * n_channels + ch] / 255.0f);
+				input_data[ch * n_pixels + p] = (image_data[p * n_channels + ch] / 255.0f);
 			}
 		}
 

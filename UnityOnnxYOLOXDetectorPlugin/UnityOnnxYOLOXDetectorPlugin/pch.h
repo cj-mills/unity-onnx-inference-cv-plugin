@@ -9,8 +9,6 @@
 
 // add headers that you want to pre-compile here
 //#include "framework.h"
-#include <onnxruntime_cxx_api.h>
-#include "dml_provider_factory.h"
-#include <opencv2/opencv.hpp>
+
 
 #endif //PCH_H

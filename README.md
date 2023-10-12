@@ -9,3 +9,4 @@ This repository houses a Unity native plugin, built in Visual Studio, that lever
 
 1. Ensure the Solution Configuration for the Visual Studio project is in `Release` mode.
 2. Restore the NuGet packages.
+3. You might need to relaunch the Visual Studio project.

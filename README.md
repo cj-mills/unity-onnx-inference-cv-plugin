@@ -1,7 +1,11 @@
-# Unity ONNX YOLOX Detector Plugin
-This repository houses a Unity native plugin, built in Visual Studio, that leverages ONNX Runtime for object detection using a YOLOX model.
+# Unity ONNX Computer Vision Inference Plugin
+This repository houses a simple native plugin for the Unity game engine, built in Visual Studio, that leverages the ONNX Runtime to perform inference with computer vision models. The plugin works with models that take a single RGB image.
 
 
+
+## Demo Projects
+
+- [unity-onnxruntime-inference-yolox-demo](https://github.com/cj-mills/unity-onnxruntime-inference-yolox-demo): A simple Unity project demonstrating how to perform object detection with ONNX Runtime. 
 
 
 

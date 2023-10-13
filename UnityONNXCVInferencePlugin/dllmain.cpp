@@ -144,7 +144,7 @@ extern "C" {
 		// The dimensions of the input image
 		input_w = image_dims[0];
 		input_h = image_dims[1];
-		
+
 		n_pixels = input_w * input_h;
 
 		// Allocate memory for the raw input data

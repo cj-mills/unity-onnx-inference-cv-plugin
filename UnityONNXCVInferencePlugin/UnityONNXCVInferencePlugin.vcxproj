@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="..\packages\Microsoft.ML.OnnxRuntime.DirectML.1.16.0\build\native\Microsoft.ML.OnnxRuntime.DirectML.props" Condition="Exists('..\packages\Microsoft.ML.OnnxRuntime.DirectML.1.16.0\build\native\Microsoft.ML.OnnxRuntime.DirectML.props')" />
+  <Import Project="..\packages\Microsoft.ML.OnnxRuntime.DirectML.1.16.1\build\native\Microsoft.ML.OnnxRuntime.DirectML.props" Condition="Exists('..\packages\Microsoft.ML.OnnxRuntime.DirectML.1.16.1\build\native\Microsoft.ML.OnnxRuntime.DirectML.props')" />
   <Import Project="..\packages\Microsoft.AI.DirectML.1.12.1\build\Microsoft.AI.DirectML.props" Condition="Exists('..\packages\Microsoft.AI.DirectML.1.12.1\build\Microsoft.AI.DirectML.props')" />
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
@@ -23,8 +23,8 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{d3e9793c-96d6-4f9c-81c2-fb9a9f99e34a}</ProjectGuid>
-    <RootNamespace>UnityOnnxYOLOXDetectorPlugin</RootNamespace>
+    <ProjectGuid>{01b74f5c-c43f-4b51-8f90-1db112013c84}</ProjectGuid>
+    <RootNamespace>UnityONNXCVInferencePlugin</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -76,7 +76,7 @@
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>WIN32;_DEBUG;UNITYONNXYOLOXDETECTORPLUGIN_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;_DEBUG;UNITYONNXCVINFERENCEPLUGIN_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
@@ -93,7 +93,7 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>WIN32;NDEBUG;UNITYONNXYOLOXDETECTORPLUGIN_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;UNITYONNXCVINFERENCEPLUGIN_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
@@ -110,7 +110,7 @@
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>_DEBUG;UNITYONNXYOLOXDETECTORPLUGIN_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_DEBUG;UNITYONNXCVINFERENCEPLUGIN_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
@@ -127,11 +127,10 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>NDEBUG;UNITYONNXYOLOXDETECTORPLUGIN_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>NDEBUG;UNITYONNXCVINFERENCEPLUGIN_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
-      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -139,12 +138,7 @@
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <EnableUAC>false</EnableUAC>
-      <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
-    <PostBuildEvent>
-      <Command>
-      </Command>
-    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="framework.h" />
@@ -165,7 +159,7 @@
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
     <Import Project="..\packages\Microsoft.AI.DirectML.1.12.1\build\Microsoft.AI.DirectML.targets" Condition="Exists('..\packages\Microsoft.AI.DirectML.1.12.1\build\Microsoft.AI.DirectML.targets')" />
-    <Import Project="..\packages\Microsoft.ML.OnnxRuntime.DirectML.1.16.0\build\native\Microsoft.ML.OnnxRuntime.DirectML.targets" Condition="Exists('..\packages\Microsoft.ML.OnnxRuntime.DirectML.1.16.0\build\native\Microsoft.ML.OnnxRuntime.DirectML.targets')" />
+    <Import Project="..\packages\Microsoft.ML.OnnxRuntime.DirectML.1.16.1\build\native\Microsoft.ML.OnnxRuntime.DirectML.targets" Condition="Exists('..\packages\Microsoft.ML.OnnxRuntime.DirectML.1.16.1\build\native\Microsoft.ML.OnnxRuntime.DirectML.targets')" />
   </ImportGroup>
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
@@ -173,7 +167,7 @@
     </PropertyGroup>
     <Error Condition="!Exists('..\packages\Microsoft.AI.DirectML.1.12.1\build\Microsoft.AI.DirectML.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.AI.DirectML.1.12.1\build\Microsoft.AI.DirectML.props'))" />
     <Error Condition="!Exists('..\packages\Microsoft.AI.DirectML.1.12.1\build\Microsoft.AI.DirectML.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.AI.DirectML.1.12.1\build\Microsoft.AI.DirectML.targets'))" />
-    <Error Condition="!Exists('..\packages\Microsoft.ML.OnnxRuntime.DirectML.1.16.0\build\native\Microsoft.ML.OnnxRuntime.DirectML.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.ML.OnnxRuntime.DirectML.1.16.0\build\native\Microsoft.ML.OnnxRuntime.DirectML.props'))" />
-    <Error Condition="!Exists('..\packages\Microsoft.ML.OnnxRuntime.DirectML.1.16.0\build\native\Microsoft.ML.OnnxRuntime.DirectML.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.ML.OnnxRuntime.DirectML.1.16.0\build\native\Microsoft.ML.OnnxRuntime.DirectML.targets'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.ML.OnnxRuntime.DirectML.1.16.1\build\native\Microsoft.ML.OnnxRuntime.DirectML.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.ML.OnnxRuntime.DirectML.1.16.1\build\native\Microsoft.ML.OnnxRuntime.DirectML.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.ML.OnnxRuntime.DirectML.1.16.1\build\native\Microsoft.ML.OnnxRuntime.DirectML.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.ML.OnnxRuntime.DirectML.1.16.1\build\native\Microsoft.ML.OnnxRuntime.DirectML.targets'))" />
   </Target>
 </Project>

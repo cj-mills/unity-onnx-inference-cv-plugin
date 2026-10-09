@@ -14,3 +14,11 @@ This repository houses a simple native plugin for the Unity game engine, built i
 1. Ensure the Solution Configuration for the Visual Studio project is in `Release` mode.
 2. Restore the NuGet packages.
 3. You might need to relaunch the Visual Studio project.
+
+<!-- relocated-posts:start (projected by the relocate verb; never edit by hand) -->
+## Retired posts
+
+The posts that accompanied this repository were retired from [christianjmills.com](https://christianjmills.com) and now live here:
+
+- [Building a Computer Vision Plugin for Unity with ONNX Runtime](retired-post/unity-onnxruntime-cv-plugin-tutorial/README.md) (2023-10-19)
+<!-- relocated-posts:end -->
